@@ -8,6 +8,7 @@ RUN chmod u+x /app/1.sh
 RUN apt-get update
 RUN apt-get install --no-install-recommends --no-install-suggests -q -y python
 RUN pip install mlflow
-RUN apt install --no-install-recommends --no-install-suggests -q -y mlflow boto3 pymysql
+RUN pip3 install boto3
+RUN apt-get install --no-install-recommends --no-install-suggests -q -y python3-pymysql
 
 CMD ["/app/1.sh"]
