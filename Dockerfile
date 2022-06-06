@@ -1,6 +1,6 @@
 FROM continuumio/miniconda3:latest
 
-MKDIR app
+RUN mkdir app
 
 COPY ./1.sh /app/1.sh
 
