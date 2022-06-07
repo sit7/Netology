@@ -1,6 +1,6 @@
 # Netology
 Команда на сборку:
-docker build -t netology-ml:netology-ml /home/alex/docker_hw/Netology  | tee netology-ml.build.log
+docker build -t netology-ml:netology-ml .  | tee netology-ml.build.log
 
 Предупреждение:
 debconf: delaying package configuration, since apt-utils is not installed
