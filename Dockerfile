@@ -1,14 +1,12 @@
 FROM continuumio/miniconda3:latest
 
-RUN mkdir app
 WORKDIR /app
 COPY /1.sh /1.sh
 
-RUN chmod u+x /app/1.sh
-RUN apt-get update
-RUN apt-get install --no-install-recommends --no-install-suggests -q -y python
-RUN pip install mlflow
-RUN pip3 install boto3
-RUN apt-get install --no-install-recommends --no-install-suggests -q -y python3-pymysql
+RUN chmod u+x /app/1.sh \
+    && apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -q -y python python3-pymysql \
+    && pip install mlflow \
+    && pip3 install boto3
 
-CMD ["/app/1.sh"]
+CMD ["/1.sh"]
