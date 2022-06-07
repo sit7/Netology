@@ -1,0 +1,211 @@
+Sending build context to Docker daemon    234kB
+Step 1/5 : FROM continuumio/miniconda3:latest
+ ---> 8ad7d89d2773
+Step 2/5 : WORKDIR /app
+ ---> Using cache
+ ---> a7fe67c3d029
+Step 3/5 : COPY /1.sh /1.sh
+ ---> Using cache
+ ---> cc38cca5a910
+Step 4/5 : RUN chmod u+x /1.sh     && apt-get update     && apt-get install --no-install-recommends --no-install-suggests -q -y python python3-pymysql     && pip install mlflow     && pip3 install boto3
+ ---> Running in 2d03761dea43
+Get:1 http://security.debian.org/debian-security bullseye-security InRelease [44.1 kB]
+Get:2 http://deb.debian.org/debian bullseye InRelease [116 kB]
+Get:3 http://deb.debian.org/debian bullseye-updates InRelease [39.4 kB]
+Get:4 http://security.debian.org/debian-security bullseye-security/main amd64 Packages [153 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 Packages [8182 kB]
+Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [2592 B]
+Fetched 8537 kB in 4s (2418 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib mailcap
+  mime-support python2 python2-minimal python2.7 python2.7-minimal
+Suggested packages:
+  python2-doc python-tk python2.7-doc binutils binfmt-support
+  python-pymysql-doc
+Recommended packages:
+  file xz-utils python3-cryptography
+The following NEW packages will be installed:
+  libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib mailcap
+  mime-support python-is-python2 python2 python2-minimal python2.7
+  python2.7-minimal python3-pymysql
+0 upgraded, 11 newly installed, 0 to remove and 6 not upgraded.
+Need to get 4063 kB of archives.
+After this operation, 16.5 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bullseye/main amd64 libpython2.7-minimal amd64 2.7.18-8 [396 kB]
+Get:2 http://deb.debian.org/debian bullseye/main amd64 python2.7-minimal amd64 2.7.18-8 [1322 kB]
+Get:3 http://deb.debian.org/debian bullseye/main amd64 python2-minimal amd64 2.7.18-3 [34.2 kB]
+Get:4 http://deb.debian.org/debian bullseye/main amd64 mailcap all 3.69 [31.7 kB]
+Get:5 http://deb.debian.org/debian bullseye/main amd64 mime-support all 3.66 [10.9 kB]
+Get:6 http://deb.debian.org/debian bullseye/main amd64 libpython2.7-stdlib amd64 2.7.18-8 [1865 kB]
+Get:7 http://deb.debian.org/debian bullseye/main amd64 python2.7 amd64 2.7.18-8 [311 kB]
+Get:8 http://deb.debian.org/debian bullseye/main amd64 libpython2-stdlib amd64 2.7.18-3 [21.2 kB]
+Get:9 http://deb.debian.org/debian bullseye/main amd64 python2 amd64 2.7.18-3 [24.5 kB]
+Get:10 http://deb.debian.org/debian bullseye/main amd64 python-is-python2 all 2.7.18-9 [2940 B]
+Get:11 http://deb.debian.org/debian bullseye/main amd64 python3-pymysql all 0.9.3-2 [43.4 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 4063 kB in 2s (2027 kB/s)
+Selecting previously unselected package libpython2.7-minimal:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12432 files and directories currently installed.)
+Preparing to unpack .../0-libpython2.7-minimal_2.7.18-8_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.18-8) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../1-python2.7-minimal_2.7.18-8_amd64.deb ...
+Unpacking python2.7-minimal (2.7.18-8) ...
+Selecting previously unselected package python2-minimal.
+Preparing to unpack .../2-python2-minimal_2.7.18-3_amd64.deb ...
+Unpacking python2-minimal (2.7.18-3) ...
+Selecting previously unselected package mailcap.
+Preparing to unpack .../3-mailcap_3.69_all.deb ...
+Unpacking mailcap (3.69) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../4-mime-support_3.66_all.deb ...
+Unpacking mime-support (3.66) ...
+Selecting previously unselected package libpython2.7-stdlib:amd64.
+Preparing to unpack .../5-libpython2.7-stdlib_2.7.18-8_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.18-8) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../6-python2.7_2.7.18-8_amd64.deb ...
+Unpacking python2.7 (2.7.18-8) ...
+Selecting previously unselected package libpython2-stdlib:amd64.
+Preparing to unpack .../7-libpython2-stdlib_2.7.18-3_amd64.deb ...
+Unpacking libpython2-stdlib:amd64 (2.7.18-3) ...
+Setting up libpython2.7-minimal:amd64 (2.7.18-8) ...
+Setting up python2.7-minimal (2.7.18-8) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up python2-minimal (2.7.18-3) ...
+Selecting previously unselected package python2.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 13202 files and directories currently installed.)
+Preparing to unpack .../python2_2.7.18-3_amd64.deb ...
+Unpacking python2 (2.7.18-3) ...
+Selecting previously unselected package python-is-python2.
+Preparing to unpack .../python-is-python2_2.7.18-9_all.deb ...
+Unpacking python-is-python2 (2.7.18-9) ...
+Selecting previously unselected package python3-pymysql.
+Preparing to unpack .../python3-pymysql_0.9.3-2_all.deb ...
+Unpacking python3-pymysql (0.9.3-2) ...
+Setting up python3-pymysql (0.9.3-2) ...
+Setting up mailcap (3.69) ...
+Setting up mime-support (3.66) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.18-8) ...
+Setting up python2.7 (2.7.18-8) ...
+Setting up libpython2-stdlib:amd64 (2.7.18-3) ...
+Setting up python2 (2.7.18-3) ...
+Setting up python-is-python2 (2.7.18-9) ...
+Collecting mlflow
+  Downloading mlflow-1.26.1-py3-none-any.whl (17.8 MB)
+Collecting packaging
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+Collecting pytz
+  Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+Collecting cloudpickle
+  Downloading cloudpickle-2.1.0-py3-none-any.whl (25 kB)
+Collecting scipy
+  Downloading scipy-1.8.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (42.2 MB)
+Collecting gitpython>=2.1.0
+  Downloading GitPython-3.1.27-py3-none-any.whl (181 kB)
+Collecting prometheus-flask-exporter
+  Downloading prometheus_flask_exporter-0.20.2-py3-none-any.whl (18 kB)
+Collecting pyyaml>=5.1
+  Downloading PyYAML-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (661 kB)
+Collecting click>=7.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+Collecting sqlparse>=0.3.1
+  Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Collecting sqlalchemy
+  Downloading SQLAlchemy-1.4.37-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting databricks-cli>=0.8.7
+  Downloading databricks-cli-0.16.6.tar.gz (62 kB)
+Requirement already satisfied: requests>=2.17.3 in /opt/conda/lib/python3.9/site-packages (from mlflow) (2.27.1)
+Collecting querystring-parser
+  Downloading querystring_parser-1.2.4-py2.py3-none-any.whl (7.9 kB)
+Collecting protobuf>=3.12.0
+  Downloading protobuf-4.21.1-cp37-abi3-manylinux2014_x86_64.whl (407 kB)
+Collecting numpy
+  Downloading numpy-1.22.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+Collecting entrypoints
+  Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+Collecting alembic
+  Downloading alembic-1.8.0-py3-none-any.whl (209 kB)
+Collecting pandas
+  Downloading pandas-1.4.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+Collecting Flask
+  Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
+Collecting docker>=4.0.0
+  Downloading docker-5.0.3-py2.py3-none-any.whl (146 kB)
+Collecting importlib-metadata!=4.7.0,>=3.7.0
+  Downloading importlib_metadata-4.11.4-py3-none-any.whl (18 kB)
+Collecting gunicorn
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Collecting pyjwt>=1.7.0
+  Downloading PyJWT-2.4.0-py3-none-any.whl (18 kB)
+Collecting oauthlib>=3.1.0
+  Downloading oauthlib-3.2.0-py3-none-any.whl (151 kB)
+Collecting tabulate>=0.7.7
+  Downloading tabulate-0.8.9-py3-none-any.whl (25 kB)
+Requirement already satisfied: six>=1.10.0 in /opt/conda/lib/python3.9/site-packages (from databricks-cli>=0.8.7->mlflow) (1.16.0)
+Collecting websocket-client>=0.32.0
+  Downloading websocket_client-1.3.2-py3-none-any.whl (54 kB)
+Collecting gitdb<5,>=4.0.1
+  Downloading gitdb-4.0.9-py3-none-any.whl (63 kB)
+Collecting smmap<6,>=3.0.1
+  Downloading smmap-5.0.0-py3-none-any.whl (24 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow) (3.3)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow) (1.26.7)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.9/site-packages (from requests>=2.17.3->mlflow) (2021.10.8)
+Collecting Mako
+  Downloading Mako-1.2.0-py3-none-any.whl (78 kB)
+Collecting greenlet!=0.4.17
+  Downloading greenlet-1.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (153 kB)
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.1.2-py3-none-any.whl (224 kB)
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Requirement already satisfied: setuptools>=3.0 in /opt/conda/lib/python3.9/site-packages (from gunicorn->mlflow) (58.0.4)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+Collecting python-dateutil>=2.8.1
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting prometheus-client
+  Downloading prometheus_client-0.14.1-py3-none-any.whl (59 kB)
+Building wheels for collected packages: databricks-cli
+  Building wheel for databricks-cli (setup.py): started
+  Building wheel for databricks-cli (setup.py): finished with status 'done'
+  Created wheel for databricks-cli: filename=databricks_cli-0.16.6-py3-none-any.whl size=112631 sha256=eaaea4c8afa1ac2176f17180cd0d23eff800976b47f743c14ce4a3fee6277416
+  Stored in directory: /root/.cache/pip/wheels/af/e4/ed/c601b319f71b0c442f62feba2a97b37617b2bf9e3f9fd6190b
+Successfully built databricks-cli
+Installing collected packages: zipp, MarkupSafe, Werkzeug, smmap, Jinja2, itsdangerous, importlib-metadata, greenlet, click, websocket-client, tabulate, sqlalchemy, pytz, python-dateutil, pyparsing, pyjwt, prometheus-client, oauthlib, numpy, Mako, gitdb, Flask, sqlparse, scipy, querystring-parser, pyyaml, protobuf, prometheus-flask-exporter, pandas, packaging, gunicorn, gitpython, entrypoints, docker, databricks-cli, cloudpickle, alembic, mlflow
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mSuccessfully installed Flask-2.1.2 Jinja2-3.1.2 Mako-1.2.0 MarkupSafe-2.1.1 Werkzeug-2.1.2 alembic-1.8.0 click-8.1.3 cloudpickle-2.1.0 databricks-cli-0.16.6 docker-5.0.3 entrypoints-0.4 gitdb-4.0.9 gitpython-3.1.27 greenlet-1.1.2 gunicorn-20.1.0 importlib-metadata-4.11.4 itsdangerous-2.1.2 mlflow-1.26.1 numpy-1.22.4 oauthlib-3.2.0 packaging-21.3 pandas-1.4.2 prometheus-client-0.14.1 prometheus-flask-exporter-0.20.2 protobuf-4.21.1 pyjwt-2.4.0 pyparsing-3.0.9 python-dateutil-2.8.2 pytz-2022.1 pyyaml-6.0 querystring-parser-1.2.4 scipy-1.8.1 smmap-5.0.0 sqlalchemy-1.4.37 sqlparse-0.4.2 tabulate-0.8.9 websocket-client-1.3.2 zipp-3.8.0
+Collecting boto3
+  Downloading boto3-1.24.3-py3-none-any.whl (132 kB)
+Collecting botocore<1.28.0,>=1.27.3
+  Downloading botocore-1.27.3-py3-none-any.whl (8.9 MB)
+Collecting jmespath<2.0.0,>=0.7.1
+  Downloading jmespath-1.0.0-py3-none-any.whl (23 kB)
+Collecting s3transfer<0.7.0,>=0.6.0
+  Downloading s3transfer-0.6.0-py3-none-any.whl (79 kB)
+Requirement already satisfied: urllib3<1.27,>=1.25.4 in /opt/conda/lib/python3.9/site-packages (from botocore<1.28.0,>=1.27.3->boto3) (1.26.7)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /opt/conda/lib/python3.9/site-packages (from botocore<1.28.0,>=1.27.3->boto3) (2.8.2)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.28.0,>=1.27.3->boto3) (1.16.0)
+Installing collected packages: jmespath, botocore, s3transfer, boto3
+Successfully installed boto3-1.24.3 botocore-1.27.3 jmespath-1.0.0 s3transfer-0.6.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mRemoving intermediate container 2d03761dea43
+ ---> 1e959ff643a0
+Step 5/5 : CMD ["/1.sh"]
+ ---> Running in 9675a440c6f0
+Removing intermediate container 9675a440c6f0
+ ---> 56ce14586612
+Successfully built 56ce14586612
+Successfully tagged netology-ml:netology-ml
