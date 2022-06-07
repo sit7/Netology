@@ -1,8 +1,8 @@
 FROM continuumio/miniconda3:latest
 
 RUN mkdir app
-
-COPY /1.sh /app/1.sh
+WORKDIR /app
+COPY /1.sh /1.sh
 
 RUN chmod u+x /app/1.sh
 RUN apt-get update
