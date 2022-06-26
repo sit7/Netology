@@ -4,7 +4,7 @@
 
 - Алерты, отслеживающие состояние контейнеров - Сработал алерт, говорящий что Jenkins контейнер не запущен более 30 сек.
 - Алерты, отслеживающие состояние хоста - Сработал алерт по загрузке (настроен на срабатывание при значении >1.5, сработал на 1.93)
-- Алерты, отслеживающие состояния сервисов в targets - там не запустился cadvisor
+- Алерты, отслеживающие состояния сервисов в targets - там не запустился cadvisor (в дальнейшем проблему решил)
 
 **dashboards в Grafana:**
 
@@ -17,3 +17,21 @@
 
 **Docker Containers Dashboard**
 
+![image](https://user-images.githubusercontent.com/6259198/175807534-71d7cb06-a9ea-4940-bb5b-cdfd0c0cf578.png)
+
+Что они показывают - следует из названий, описание в readme.md проекта:
+The Docker Containers Dashboard shows key metrics for monitoring running containers:
+
+- Total containers CPU load, memory and storage usage
+- Running containers graph, system load graph, IO usage graph
+- Container CPU usage graph
+- Container memory usage graph
+- Container cached memory usage graph
+- Container network inbound usage graph
+- Container network outbound usage graph
+- 
+Note that this dashboard doesn't show the containers that are part of the monitoring stack.
+
+Единственное, у меня дэшбород в "Running Containers Dashboard" показывает контейнеры, из стека мониторинга, остальные действительно стек отфильтровывают. Отредактировал запрос (в порядке эксперимента) - вернул контенеры стека на один график:
+
+![image](https://user-images.githubusercontent.com/6259198/175808649-a720b53f-b834-4d0b-8b9c-901a4a3a0673.png)
