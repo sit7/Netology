@@ -31,6 +31,6 @@ Feature names must be in the same order as they were in fit.
 
 **[6.507185441498436]**
 
-и уже без сообщения об ошибке
+и уже без предупреждения
 
 ![image](https://user-images.githubusercontent.com/6259198/178483569-c2aca38a-70b9-49d9-b799-b7bae88352d4.png)
